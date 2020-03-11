@@ -1,0 +1,176 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+body {
+	overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+.success {
+	width: 500px;
+	margin: 50px auto;
+	background:#28a745;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	margin-left: -250px;
+	z-index: 1;
+	font-family: 'Roboto', sans-serif;
+}
+
+.success i {
+	position: absolute;
+	right: 10px;
+	bottom: 21px;
+}
+
+.games {
+	background: url('galaxy/background.png');
+	background-size: cover;
+	height: 100vh;
+}
+.obstacle {
+	position: relative;
+	height: auto;
+}
+.obstacle img {
+	vertical-align: middle;
+}
+.obstacles img {
+	width: 220px;
+}
+
+#spaceship {
+	position: absolute;
+	top: 800px;
+	left: 750px;
+	width: 108px;
+	height: 130px;
+
+}
+#spaceship:before {
+	content: "";
+	position: absolute;
+	width: 108px;
+	height: 130px;
+	left: 50%;
+	top: 50%;
+	margin-left: -54px;
+	margin-top: -65px;
+	background: url('galaxy/rocket_sprite.png') 0 0 no-repeat;
+}
+#spaceship.ignition:before {
+	animation: ignition 0.3s steps(2) infinite;
+	animation-fill-mode: forwards;
+}
+
+.obstacle1 {
+	position: absolute;
+	left: 240px;
+}
+
+.obstacle2 {
+	position: absolute;
+	left: 970px;
+	top: 20px;
+}
+
+.obstacle3 {
+	position: absolute;
+	left: 705px;
+	top: 440px;
+}
+
+.obstacle4 {
+	position: absolute;
+	left: 100px;
+	top: 400px;
+}
+
+.obstacle5 {
+	position: absolute;
+	top: 300px;
+	right: 240px;
+}
+
+.obstacle6 {
+	position: absolute;
+	top: 655px;
+	left: 20px;
+}
+
+.obstacle7 {
+	position: absolute;
+	top: 600px;
+	right: 240px;
+}
+
+.obstacle8 {
+	position: absolute;
+	top: 260px;
+	left: 450px;
+}
+
+#spaceship.top:before { transform: rotate(0deg) }
+#spaceship.top-right:before { transform: rotate(45deg) }
+#spaceship.right:before { transform: rotate(90deg) }
+#spaceship.bottom-right:before { transform: rotate(135deg) }
+#spaceship.bottom:before { transform: rotate(180deg) }
+#spaceship.bottom-left:before { transform: rotate(225deg) }
+#spaceship.left:before { transform: rotate(270deg) }
+#spaceship.top-left:before { transform: rotate(315deg) }
+
+@keyframes ignition {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -216px 0;
+	}
+}
+
+.games .moving_arrow {
+	position: fixed;
+	bottom: 80px;
+	right: 200px;
+}
+.games .moving_arrow a {
+	font-size: 50px;
+	color: #fff;
+}
+.games .moving_arrow a.active,
+.games .moving_arrow a:active { color: red }
+.games .moving_arrow a.up {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+}
+.games .moving_arrow a.down {
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+}
+.games .moving_arrow a.left {
+	position: absolute;
+	bottom: 0;
+	left: -30px;
+}
+.games .moving_arrow a.right {
+	position: absolute;
+	bottom: 0;
+	left: 30px;
+}
+
+.finish-line {
+	background: url('galaxy/finish_line.png');
+	background-size: 26px;
+	height: 25px;
+}
